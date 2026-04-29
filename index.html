@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="81 Survival" />
+  <title>81 Survival Ladder</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="./icon-192.png" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Darts checkout practice</p>
+        <h1>81 Survival Ladder</h1>
+      </div>
+      <div class="mini-card">
+        <span>Best</span>
+        <strong id="headerBest">81</strong>
+      </div>
+    </header>
+
+    <main>
+      <section id="playView" class="view active">
+        <div class="hero-card">
+          <div class="stats-row">
+            <div>
+              <span>Total runs</span>
+              <strong id="runsPlayed">0</strong>
+            </div>
+            <div>
+              <span>Today</span>
+              <strong id="todayBest">81</strong>
+            </div>
+          </div>
+
+          <div class="score-wrap" id="scoreWrap">
+            <p>Current checkout</p>
+            <div id="currentScore" class="score">81</div>
+            <div id="newBest" class="new-best hidden">New Best!</div>
+          </div>
+
+          <div class="lives-wrap">
+            <span>Lives</span>
+            <div id="lives" class="hearts">♡ ♡ ♡</div>
+          </div>
+
+          <div id="statusMessage" class="status-message">Start on 81. Hit in 3 earns a life.</div>
+
+          <div class="button-stack">
+            <button id="hit3Btn" class="btn btn-primary">Hit Checkout in 3</button>
+            <button id="hit6Btn" class="btn btn-secondary">Hit Checkout in 6</button>
+            <button id="missBtn" class="btn btn-danger">Missed Checkout</button>
+          </div>
+
+          <div class="utility-row">
+            <button id="undoBtn" class="btn btn-ghost">Undo</button>
+            <button id="newRunBtn" class="btn btn-ghost">New Run</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="statsView" class="view">
+        <div class="section-card">
+          <h2>Stats</h2>
+          <div class="stat-grid">
+            <div><span>Total runs</span><strong id="statRuns">0</strong></div>
+            <div><span>Best score</span><strong id="statBest">81</strong></div>
+            <div><span>Today best</span><strong id="statToday">81</strong></div>
+            <div><span>Average reached</span><strong id="statAverage">81.0</strong></div>
+            <div><span>Ladders complete</span><strong id="statCompleted">0</strong></div>
+            <div><span>Lives earned</span><strong id="statLivesEarned">0</strong></div>
+            <div><span>Lives lost</span><strong id="statLivesLost">0</strong></div>
+            <div><span>3 dart %</span><strong id="statHit3Pct">0%</strong></div>
+            <div><span>6 dart %</span><strong id="statHit6Pct">0%</strong></div>
+            <div><span>Miss %</span><strong id="statMissPct">0%</strong></div>
+          </div>
+        </div>
+
+        <div class="section-card table-card">
+          <h2>Score Breakdown</h2>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Score</th>
+                  <th>Attempts</th>
+                  <th>Hit 3</th>
+                  <th>Hit 6</th>
+                  <th>Misses</th>
+                  <th>3 Dart %</th>
+                  <th>6 Dart %</th>
+                  <th>Success %</th>
+                </tr>
+              </thead>
+              <tbody id="statsTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="settingsView" class="view">
+        <div class="section-card">
+          <h2>Settings</h2>
+          <p class="muted">Your data is saved only on this device using localStorage.</p>
+          <button id="resetBtn" class="btn btn-danger full">Reset all data</button>
+          <p class="version">Version 1.0.0</p>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-btn active" data-view="playView">Play</button>
+      <button class="nav-btn" data-view="statsView">Stats</button>
+      <button class="nav-btn" data-view="settingsView">Settings</button>
+    </nav>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
